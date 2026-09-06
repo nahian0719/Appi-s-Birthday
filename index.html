@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Appi!</title>
-    <!-- Google Font: Dancing Script -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
     <style>
         @font-face {
@@ -456,7 +455,7 @@
             width: 100%;
             height: 60px;
             display: flex;
-            justify-content: space-around;
+            justify-around: space-around;
             pointer-events: none;
             z-index: 2;
         }
@@ -924,7 +923,6 @@
 
     <div class="floral-bg" id="particleBg"></div>
 
-    <!-- PAGE 1 -->
     <div class="page active" id="page1">
         <canvas id="canvas-celebration"></canvas>
         <div class="content-z2" style="text-align: center; width: 100%;">
@@ -933,7 +931,6 @@
         </div>
     </div>
 
-    <!-- PAGE 2 -->
     <div class="page" id="page2">
         <div class="page2-container content-z2">
             <h2>You were picked from the trash since..</h2>
@@ -946,16 +943,15 @@
             </div>
 
             <div class="photo-frames">
-                <div class="frame" style="--rot: -3deg;"><img src="photo1.jpg" alt="Photo 1"></div>
-                <div class="frame" style="--rot: 2deg;"><img src="photo2.jpg" alt="Photo 2"></div>
-                <div class="frame" style="--rot: -2deg;"><img src="photo3.jpg" alt="Photo 3"></div>
+                <div class="frame" style="--rot: -3deg;"><img src="photo1.png" alt="Photo 1"></div>
+                <div class="frame" style="--rot: 2deg;"><img src="photo2.png" alt="Photo 2"></div>
+                <div class="frame" style="--rot: -2deg;"><img src="photo3.png" alt="Photo 3"></div>
             </div>
 
             <button class="btn" id="toPage3Btn">Continue the journey</button>
         </div>
     </div>
 
-    <!-- PAGE 3 -->
     <div class="page" id="page3">
         <canvas id="page3-full-canvas"></canvas>
 
@@ -992,7 +988,6 @@ Now, where’s my birthday treat?</textarea>
         </div>
     </div>
 
-    <!-- PAGE 4 -->
     <div class="page" id="page4">
         <div class="party-garland">
             <div class="flag"></div><div class="flag"></div><div class="flag"></div><div class="flag"></div>
@@ -1029,7 +1024,6 @@ Now, where’s my birthday treat?</textarea>
         </div>
     </div>
 
-    <!-- PAGE 5 -->
     <div class="page" id="page5">
         <div class="page5-wrapper content-z2">
             <div class="final-card">
@@ -1389,40 +1383,4 @@ Now, where’s my birthday treat?</textarea>
             let celebParticles = [];
             for (let i = 0; i < 70; i++) {
                 celebParticles.push({
-                    x: Math.random() * cWidth,
-                    y: Math.random() * cHeight,
-                    vx: (Math.random() - 0.5) * 2,
-                    vy: Math.random() * 2 + 1,
-                    size: Math.random() * 8 + 3,
-                    color: ['#ffffff', '#f48fb1', '#ad1457', '#ff80ab', '#fce4ec'][Math.floor(Math.random() * 5)],
-                    angle: Math.random() * Math.PI,
-                    spin: (Math.random() - 0.5) * 0.05
-                });
-            }
-
-            function loop() {
-                cCtx.clearRect(0, 0, cWidth, cHeight);
-                celebParticles.forEach(p => {
-                    p.y += p.vy;
-                    p.x += p.vx + Math.sin(p.angle) * 0.5;
-                    p.angle += p.spin;
-
-                    if (p.y > cHeight) {
-                        p.y = -10;
-                        p.x = Math.random() * cWidth;
-                    }
-
-                    cCtx.save();
-                    cCtx.translate(p.x, p.y);
-                    cCtx.rotate(p.angle);
-                    cCtx.fillStyle = p.color;
-                    cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
-                    cCtx.restore();
-                });
-                requestAnimationFrame(loop);
-            }
-            loop();
-        }
-    </script>
-</body>
-</html>
+                    x: Math.random() *
